@@ -36,3 +36,5 @@ lerna-debug.log*
 
 # BTP specific file
 *.mtar
+*.mta
+*.nestJsdbApp_mta_build_tmp/
