@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #reports td,
+        #reports th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #reports tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #reports tr:hover {
+            background-color: #ddd;
+        }
+
+        #reports th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #0d5a81;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Employees - Reporting Info</h1>
+    <table id="reports">
+        <tr>
+            <th>Employee Id </th>
+            <th>First Name </th>
+            <th>Last Name </th>
+            <th>email </th>
+            <th>Hired Date</th>
+        </tr>
+        {{#each emp}}
+        <tr>
+            <td>{{employeeId}}</td>
+            <td>{{firstName}}</td>
+            <td>{{lastName}}</td>
+            <td>{{email}}</td>
+            <td>{{hireDate}}</td>
+        </tr>
+        {{/each}}
+    </table>
+
+    <h2>Department Details</h2>
+    <table id="reports">
+        <tr>
+            <th>Department Id </th>
+            <th>Department Name </th>
+            <th>Email </th>
+            <th>Department Manager </th>
+        </tr>
+        {{#each dept}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{deptName}}</td>
+            <td>{{email}}</td>
+            <td>{{departmenttManager}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</body>
+
+</html>
