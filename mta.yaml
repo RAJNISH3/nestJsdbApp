@@ -1,10 +1,10 @@
 _schema-version: 3.3.0
 
-ID: my-nestjs-emp-app
+ID: emp-app
 version: 0.0.1
 
 modules:
-  - name: nestJsdbApp
+  - name: emp-app
     type: nodejs
     path: .
     build-parameters:
@@ -12,14 +12,15 @@ modules:
       commands:
         - npm ci
         - npm run build
+        - cp -r db.db
         - npm prune --include=dev
     parameters:
       buildpack: nodejs_buildpack
       command: node dist/main
-      memory: 128M
+      memory: 1024M
       routes:
-        - route: my-nestjs-emp-app-${space}.${default-domain}
-        - route: my-nestjs-emp-app-${space}.cert.${default-domain}
+        - route: emp-app-${space}.${default-domain}
+        - route: emp-app-${space}.cert.${default-domain}
     requires:
       - name: cloud-logging
 
